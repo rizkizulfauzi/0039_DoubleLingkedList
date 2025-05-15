@@ -46,6 +46,9 @@ public:
             START ->prev =NULL;
             //step 6
             newNode ->prev =NULL;
+            //step 7
+            START = newNode;
+            return;
         }
     }
 };

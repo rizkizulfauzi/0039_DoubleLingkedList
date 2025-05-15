@@ -44,6 +44,8 @@ public:
             // Step 5
             if (START !=NULL)
             START ->prev =NULL;
+            //step 6
+            newNode ->prev =NULL;
         }
     }
 };

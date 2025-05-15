@@ -53,23 +53,57 @@ public:
             Node *current = START;
             while (current->next != NULL && nim == current->next->noMhs < nim)
             {
-                current = current ->next;
+                current = current->next;
             }
-            if (current ->next !=NULL && nim == current->next->noMhs)
+            if (current->next != NULL && nim == current->next->noMhs)
             {
-                cout <<"\nDuplicate roll number notallowed" << endl;
+                cout << "\nDuplicate roll number notallowed" << endl;
                 return;
             }
 
-            //step9
-            newNode -> next = current -> next;
-            newNode ->prev = current;
+            // step9
+            newNode->next = current->next;
+            newNode->prev = current;
 
-            //insert last node
-            if (current -> next != NULL)
-            current->next->prev =newNode;
+            // insert last node
+            if (current->next != NULL)
+                current->next->prev = newNode;
 
-            current ->next =newNode;
+            current->next = newNode;
         }
+    }
+    void hapus()
+    {
+        if (START == NULL)
+        {
+            cout << "\n.List is empty" << endl;
+            return;
+        }
+        cout << "\nEnter Number you want to delete:";
+        int rolNo;
+        cin >> rolNo;
+
+        Node *current = START;
+        while (current != NULL && current->noMhs != rolNo)
+        {
+            current = current->next;
+        }
+        if (current == NULL){
+            cout << "Record not found" <<endl;
+            return;
+        }
+        if(current == START){
+            START = current -> next;
+            if (START != NULL){
+                START -> prev =NULL;
+            }
+        }else{
+            current ->prev -> next = current->next;
+            if (current -> next != NULL){
+                current -> next -> prev = current ->prev;
+            }
+        }
+        delete current;
+        cout <<  "record with roll number " <<rolNo <<"delete" <<endl;
     }
 };

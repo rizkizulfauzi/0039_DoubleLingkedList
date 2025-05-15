@@ -60,6 +60,10 @@ public:
                 cout <<"\nDuplicate roll number notallowed" << endl;
                 return;
             }
+
+            //step9
+            newNode -> next = current -> next;
+            newNode ->prev = current;
         }
     }
 };

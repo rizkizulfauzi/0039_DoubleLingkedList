@@ -68,6 +68,8 @@ public:
             //insert last node
             if (current -> next != NULL)
             current->next->prev =newNode;
+
+            current ->next =newNode;
         }
     }
 };

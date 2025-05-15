@@ -18,26 +18,29 @@ private:
 public:
     DoubleLinkedList()
     {
-        START  = NULL;
+        START = NULL;
     }
 
-    void addNode(){
+    void addNode()
+    {
         int nim;
         string nama;
-        cout <<"\nEnter the roll number of the student";
+        cout << "\nEnter the roll number of the student";
         cin >> nim;
 
         Node *newNode = new Node();
 
-        newNode ->noMhs = nim;
+        newNode->noMhs = nim;
 
-        if(START == NULL || nim <= START->noMhs)
+        if (START == NULL || nim <= START->noMhs)
         {
-            if (START !=NULL && nim == START->noMhs)
+            if (START != NULL && nim == START->noMhs)
             {
                 cout << "\nDuplicate number not allowed" << endl;
                 return;
             }
+            // step 4
+            newNode ->next =START;
         }
     }
-}; 
+};

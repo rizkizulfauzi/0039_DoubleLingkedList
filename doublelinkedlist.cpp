@@ -40,7 +40,10 @@ public:
                 return;
             }
             // step 4
-            newNode ->next =START;
+            newNode->next = START;
+            // Step 5
+            if (START !=NULL)
+            START ->prev =NULL;
         }
     }
 };

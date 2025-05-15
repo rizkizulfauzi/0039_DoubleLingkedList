@@ -42,13 +42,19 @@ public:
             // step 4
             newNode->next = START;
             // Step 5
-            if (START !=NULL)
-            START ->prev =NULL;
-            //step 6
-            newNode ->prev =NULL;
-            //step 7
+            if (START != NULL)
+                START->prev = NULL;
+            // step 6
+            newNode->prev = NULL;
+            // step 7
             START = newNode;
             return;
+
+            Node *current = START;
+            while (current->next != NULL && nim == current->next->noMhs < nim)
+            {
+                current = current ->next;
+            }
         }
     }
 };
